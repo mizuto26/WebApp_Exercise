@@ -1,0 +1,40 @@
+@model Op03Form
+@{
+    ViewData[index: "Title"] = "オプション演習-04 タグヘルパーを利用する";
+}
+<h2>@ViewData[index: "Title"]</h2>
+
+<class="d-flex justify-content-center">
+    <form asp-controller="Op04" asp-action="Result" method="post">
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label asp-for="Value1" class="form-label"></label>
+            <input asp-for="Value1" class="form-control" />
+            <span asp-validation-for="Value1" class="text-danger d-block"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Value2" class="form-label"></label>
+            <input asp-for="Value2" class="form-control" />
+            <span asp-validation-for="Value2" class="text-danger d-block"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Opt" class="form-label"></label>
+            <select asp-for="Opt" class="form-select">
+                <option value="">選択されていません</option>
+                <option value="1">加算</option>
+                <option value="2">減算</option>
+                <option value="3">乗算</option>
+                <option value="4">除算</option>
+                <option value="5">剰余</option>
+            </select>
+            <span asp-validation-for="Opt" class="text-danger d-block"></span>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">計算</button>
+        </div>
+    </form>
+</div>

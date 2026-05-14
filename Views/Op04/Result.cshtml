@@ -1,0 +1,20 @@
+@model Op03Form
+@{
+    ViewData[index: "Title"] = "オプション演習-04 タグヘルパーを利用する";
+}
+<h2>@ViewData[index: "Title"]</h2>
+
+<div class="d-flex justify-content-center">
+    <h3>
+        @{
+            string? result = $"答え = {Model.Answer}";
+        }
+        @result
+    </h3>
+</div>
+
+<div class="d-flex justify-content-center">
+    <form asp-controller="Op04" asp-action="Back" method="get">
+        <button type="submit" class="btn btn-primary">戻る</button>
+    </form>
+</div>
