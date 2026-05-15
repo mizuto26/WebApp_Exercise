@@ -1,0 +1,24 @@
+@model List<SampleForm>
+@{
+    ViewData[index: "Title"] = "Razor構文の利用";
+}
+
+<h2>@ViewData[index: "Title"]</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>氏名</th>
+            <th>年齢</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SampleForm item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
