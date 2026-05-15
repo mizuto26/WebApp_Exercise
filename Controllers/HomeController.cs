@@ -9,18 +9,18 @@ namespace WebApp_Exercise.Controllers;
 
 public class HomeController(ILogger<HomeController> logger) : Controller
 {
-    //クラス専用ログ出力機ｗ
+    //クラス専用ログ出力機
     private readonly ILogger<HomeController> _logger = logger;
 
     //ActionResultはControllerが返す結果の型
     public IActionResult Index()
     {
-        return View();
+        return View("Index");
     }
 
     public IActionResult Privacy()
     {
-        return View();
+        return View("Privacy");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -32,7 +32,7 @@ public class HomeController(ILogger<HomeController> logger) : Controller
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
         };
 
-        return View(viewModel);
+        return View("Error", viewModel);
     }
 
     public IActionResult ViewContent()
