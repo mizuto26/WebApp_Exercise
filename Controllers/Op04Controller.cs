@@ -15,7 +15,7 @@ public class Op04Controller : Controller
     [HttpPost("Result")]
     public IActionResult Result(Op03Form form)
     {
-        if (!ModelState.IsValid)
+        if (!this.ModelState.IsValid)
         {
             return View("Enter", form);
         }

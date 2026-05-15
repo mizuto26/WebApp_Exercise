@@ -7,7 +7,7 @@ public class Ex06Controller : Controller
     [HttpGet("Calc/{value1}/{value2}")]
     public IActionResult Calc(int value1, int value2)
     {
-        if (!ModelState.IsValid) // 型変換エラー?
+        if (!ModelState.IsValid)
         {
             if ((ModelState["value1"]?.Errors.Count ?? 0) > 0 && (ModelState["value2"]?.Errors.Count ?? 0) > 0)
             {

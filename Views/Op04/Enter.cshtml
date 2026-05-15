@@ -1,16 +1,22 @@
 @model Op03Form
+
 @{
     ViewData[index: "Title"] = "オプション演習-04 タグヘルパーを利用する";
 }
 <h2>@ViewData[index: "Title"]</h2>
 
 <div class="d-flex justify-content-center">
+    //Op04のResultにformを引数として送る
+    //その段階でmodelのアノテーションによるバリデーションチェック
+    //エラーがあればOp04のModelState[]に保存
     <form asp-controller="Op04" asp-action="Result" method="post">
         @Html.AntiForgeryToken()
 
         <div class="mb-3">
+            //Op03FormのNameを見る
             <label asp-for="Value1" class="form-label me-2" style="min-width:80px;"></label>
             <input asp-for="Value1" class="form-control" />
+            //Op04のModelState[]を見る
             <span asp-validation-for="Value1" class="text-danger d-block"></span>
         </div>
 
