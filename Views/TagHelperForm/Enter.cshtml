@@ -1,0 +1,23 @@
+@model SampleForm
+@{
+    ViewData[index: "Title"] = "HTML Formを生成するタグヘルパー";
+}
+<h2>@ViewData[index: "Title"]</h2>
+
+<form asp-controller="FormSample" asp-action="Result" method="post">
+    @Html.AntiForgeryToken()
+
+    <label asp-for="Name" class="form-label"></label>
+    <input asp-for="Name" class="form-control" />
+
+    <label asp-for="Age" class="form-label"></label>
+    <input asp-for="Age" class="form-control" />
+
+    <label asp-for="PrefecturesId" class="form-label"></label>
+    <select asp-for="PrefecturesId" asp-items="Model.PrefecturesList" class="form-control"></select>
+
+    <br />
+    <div class="d-flex justify-content-center">
+        <button type="submit">送信</button>
+    </div>
+</form>

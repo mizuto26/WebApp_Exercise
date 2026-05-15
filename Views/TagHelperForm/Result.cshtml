@@ -1,0 +1,43 @@
+@model SampleForm
+@{
+    ViewData[index: "Title"] = "HTML Formを生成するタグヘルパー";
+
+    string prefectureId = Model.PrefecturesId.ToString();
+
+    SelectListItem? selectedItem = Model.PrefecturesList
+        .FirstOrDefault(prefecture => prefecture.Value == prefectureId);
+
+    string selectedPref = selectedItem?.Text ?? "未選択";
+}
+<h2>@ViewData[index: "Title"]</h2>
+
+<div class="d-flex justify-content-center mt-5">
+    <table class="table table-bordered w-auto">
+        <thead class="table-light">
+            <tr>
+                <th>項目</th>
+                <th>入力値</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayNameFor(sampleForm => sampleForm.Name)</td>
+                <td>@Model.Name</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(sampleForm => sampleForm.Age)</td>
+                <td>@Model.Age</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(sampleForm => sampleForm.PrefecturesId)</td>
+                <td>@selectedPref</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-center">
+    <form method="get">
+        <button type="button" onclick="location.href='/FormSample/Back'">戻る</button>
+    </form>
+</div>

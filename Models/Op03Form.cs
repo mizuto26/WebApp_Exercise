@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace WebApp_Exercise.Models;
 
@@ -21,4 +22,14 @@ public class Op03Form
     public int? Opt { get; set; }
 
     public int? Answer { get; set; }
+
+    public List<SelectListItem> OptList { get; set; } =
+    [
+        new() { Text="--選択されていません--", Value="0" , Selected = true },
+        new() { Text= "加算", Value= "1" },
+        new() { Text= "減算", Value= "2" },
+        new() { Text= "乗算", Value= "3" },
+        new() { Text= "減算", Value= "4" },
+        new() { Text= "乗算", Value= "5" }
+    ];
 }
