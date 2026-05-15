@@ -28,15 +28,15 @@ if (!app.Environment.IsDevelopment())
 
     // HTTPSを強制する設定
     app.UseHsts();
+
+    // HTTPで来たアクセスをHTTPSへ転送
+    app.UseHttpsRedirection();
 }
 
 
 // ==========================
 // 4. Middleware設定
 // ==========================
-
-// HTTPで来たアクセスをHTTPSへ転送
-app.UseHttpsRedirection();
 
 // wwwroot内のCSS・JS・画像を使えるようにする
 app.UseStaticFiles();

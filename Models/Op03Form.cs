@@ -29,7 +29,7 @@ public class Op03Form
         new() { Text= "加算", Value= "1" },
         new() { Text= "減算", Value= "2" },
         new() { Text= "乗算", Value= "3" },
-        new() { Text= "減算", Value= "4" },
-        new() { Text= "乗算", Value= "5" }
+        new() { Text= "除算", Value= "4" },
+        new() { Text= "剰余", Value= "5" }
     ];
 }

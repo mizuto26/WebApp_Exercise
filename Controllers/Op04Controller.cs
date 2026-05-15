@@ -37,7 +37,6 @@ public class Op04Controller : Controller
     [HttpGet("Back")]
     public IActionResult Back()
     {
-        Op03Form? form = new();
-        return View("Enter", form);
+        return RedirectToAction("Enter");
     }
 }
