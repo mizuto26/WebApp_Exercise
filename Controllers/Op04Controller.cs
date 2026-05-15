@@ -12,6 +12,7 @@ public class Op04Controller : Controller
         return View("Enter", form);
     }
 
+    [ValidateAntiForgeryToken]
     [HttpPost("Result")]
     public IActionResult Result(Op03Form form)
     {

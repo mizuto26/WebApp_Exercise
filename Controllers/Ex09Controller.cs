@@ -13,6 +13,7 @@ public class Ex09Controller : Controller
         return View("Enter", form);
     }
 
+    [ValidateAntiForgeryToken]
     [HttpPost("Calc")]
     public IActionResult Calc(Exercise07Form form)
     {

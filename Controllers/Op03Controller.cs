@@ -5,6 +5,7 @@ namespace WebApp_Exercise.Controllers;
 [Route("Option03")]
 public class Op03Controller : Controller
 {
+    [ValidateAntiForgeryToken]
     [HttpPost("Calc")]
     public IActionResult Calc(Op03Form form)
     {

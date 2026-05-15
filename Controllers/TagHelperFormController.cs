@@ -12,6 +12,7 @@ public class TagHelperFormController : Controller
         return View("Enter", form);
     }
 
+    [ValidateAntiForgeryToken]
     [HttpPost("Result")]
     public IActionResult Result(SampleForm form)
     {
