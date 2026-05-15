@@ -22,7 +22,7 @@ public class Ex06Controller : Controller
                 return Content("value2は整数ではありません。");
             }
         }
-        var result = value1 + value2;
+        int result = value1 + value2;
         return Content($"{value1} + {value2} = {result}");
     }
 }

@@ -4,6 +4,7 @@ namespace WebApp_Exercise.Models;
 
 public class Op03Form
 {
+    //バリデーションの指示
     [Display(Name = "値1")]
     [Required(ErrorMessage = "{0}を入力してください。")]
     [Range(0, 1000, ErrorMessage = "{0}は{1}以上{2}以下の範囲で入力してください。")]

@@ -8,7 +8,7 @@ public class Op04Controller : Controller
     [HttpGet("Enter")]
     public ActionResult Enter()
     {
-        var form = new Op03Form();
+        Op03Form? form = new();
         return View("Enter", form);
     }
 
@@ -20,7 +20,7 @@ public class Op04Controller : Controller
             return View("Enter", form);
         }
 
-        var result = form.Opt switch
+        int? result = form.Opt switch
         {
             1 => form.Value1 + form.Value2,
             2 => form.Value1 - form.Value2,
@@ -37,7 +37,7 @@ public class Op04Controller : Controller
     [HttpGet("Back")]
     public IActionResult Back()
     {
-        var form = new Op03Form();
+        Op03Form? form = new();
         return View("Enter", form);
     }
 }

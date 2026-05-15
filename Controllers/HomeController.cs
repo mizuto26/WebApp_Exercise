@@ -9,7 +9,7 @@ namespace WebApp_Exercise.Controllers;
 
 public class HomeController(ILogger<HomeController> logger) : Controller
 {
-    //クラス専用ログ出力機
+    //クラス専用ログ出力機ｗ
     private readonly ILogger<HomeController> _logger = logger;
 
     //ActionResultはControllerが返す結果の型
@@ -26,7 +26,7 @@ public class HomeController(ILogger<HomeController> logger) : Controller
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        var viewModel = new ErrorViewModel
+        ErrorViewModel? viewModel = new()
         {
             //エラー追跡IDの作成
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier

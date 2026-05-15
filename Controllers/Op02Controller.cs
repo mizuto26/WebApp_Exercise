@@ -7,7 +7,7 @@ public class Op02Controller : Controller
     [HttpGet("Calc/{value1}/{value2}/{opt}")]
     public IActionResult Calc(int value1, int value2, int opt)
     {
-        var result = opt switch
+        int? result = opt switch
         {
             1 => value1 + value2,
             2 => value1 - value2,

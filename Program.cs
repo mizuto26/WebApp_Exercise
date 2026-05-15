@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
 // ==========================
 // 1. サービス登録（DI設定）
@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 // 2. アプリ本体を作成
 // ==========================
 
-var app = builder.Build();
+WebApplication? app = builder.Build();
 
 
 // ==========================

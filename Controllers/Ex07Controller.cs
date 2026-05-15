@@ -8,7 +8,7 @@ public class Ex07Controller : Controller
     [HttpPost("Calc")]
     public IActionResult Calc(Exercise07Form form)
     {
-        var result = form.Value1 + form.Value2;
+        int result = form.Value1 + form.Value2;
         return Content($"{form.Value1} + {form.Value2} = {result}");
     }
 }
