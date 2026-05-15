@@ -14,7 +14,7 @@ public class Op02Controller : Controller
             3 => value1 * value2,
             4 => value1 / value2,
             5 => value1 % value2,
-            _ => (int?)null
+            _ => null
         };
 
         if (result is null)
