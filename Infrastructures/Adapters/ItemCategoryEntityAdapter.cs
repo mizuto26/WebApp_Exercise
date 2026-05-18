@@ -4,8 +4,12 @@ using WebApp_Exercise.Exceptions;
 using WebApp_Exercise.Infrastructures.Entities;
 namespace WebApp_Exercise.Infrastructures.Adapters;
 
-public class ItemCategoryEntityAdapter :
-IConverter<ItemCategory, ItemCategoryEntity>, IRestorer<ItemCategoryEntity, ItemCategory>
+/// <summary>
+/// 商品カテゴリドメインモデルとitem_categoryテーブル用Entityを相互変換します。
+/// RepositoryがDomainとDBの形を分けて扱うために使います。
+/// </summary>
+public class ItemCategoryEntityAdapter
+: IConverter<ItemCategory, ItemCategoryEntity>, IRestorer<ItemCategoryEntity, ItemCategory>
 {
     public ItemCategoryEntity Convert(ItemCategory domain)
     {

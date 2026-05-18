@@ -4,8 +4,12 @@ using WebApp_Exercise.Exceptions;
 using WebApp_Exercise.Infrastructures.Entities;
 namespace WebApp_Exercise.Infrastructures.Adapters;
 
-public class ItemStockEntityAdapter :
-IConverter<ItemStock, ItemStockEntity>, IRestorer<ItemStockEntity, ItemStock>
+/// <summary>
+/// 商品在庫ドメインモデルとitem_stockテーブル用Entityを相互変換します。
+/// RepositoryがDomainとDBの形を分けて扱うために使います。
+/// </summary>
+public class ItemStockEntityAdapter
+: IConverter<ItemStock, ItemStockEntity>, IRestorer<ItemStockEntity, ItemStock>
 {
     public ItemStockEntity Convert(ItemStock domain)
     {

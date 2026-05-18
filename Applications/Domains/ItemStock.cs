@@ -1,6 +1,10 @@
 using WebApp_Exercise.Exceptions;
 namespace WebApp_Exercise.Applications.Domains;
 
+/// <summary>
+/// 商品在庫を表すドメインモデルです。
+/// 在庫数が0以上であることなど、在庫として守るべき業務ルールを持ちます。
+/// </summary>
 public class ItemStock
 {
     public int? Id { get; private set; }

@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp_Exercise.Applications.Domains;
 namespace WebApp_Exercise.Presentations.ViewModels;
 
+/// <summary>
+/// 商品登録画面で使うViewModelです。
+/// 入力値、確認画面の表示値、カテゴリ選択リストを保持します。
+/// </summary>
 public class ItemRegisterViewModel
 {
     [Required(ErrorMessage = "商品名は必須です。")]

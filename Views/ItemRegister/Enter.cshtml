@@ -1,5 +1,6 @@
 @using WebApp_Exercise.Presentations.ViewModels
 @model ItemRegisterViewModel
+@* 商品登録の入力画面です。商品名、単価、在庫数、カテゴリを入力して確認画面へ進みます。 *@
 @{
     ViewData[index: "Title"] = "商品登録（入力）";
 }
@@ -8,8 +9,6 @@
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-5 col-sm-7">
-
-            @* 送信先はControllerのConfirm()アクション*@
             <form asp-action="Confirm" asp-controller="ItemRegister" method="post">
 
                 @* 商品名 *@

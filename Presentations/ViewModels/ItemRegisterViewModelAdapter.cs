@@ -2,9 +2,12 @@ using WebApp_Exercise.Applications.Adapters;
 using WebApp_Exercise.Applications.Domains;
 namespace WebApp_Exercise.Presentations.ViewModels;
 
-public class ItemRegisterViewModelAdapter :
-    IRestorer<ItemRegisterViewModel, Item>,
-    IItemRegisterViewModelAdapter
+/// <summary>
+/// 商品登録ViewModelを商品Domeinモデルへ変換します。
+/// 画面で入力された商品名、単価、在庫数、カテゴリをDomainに詰め替えます。
+/// </summary>
+public class ItemRegisterViewModelAdapter
+: IRestorer<ItemRegisterViewModel, Item>, IItemRegisterViewModelAdapter
 {
     public Item Restore(ItemRegisterViewModel target)
     {

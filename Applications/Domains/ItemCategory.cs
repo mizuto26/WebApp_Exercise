@@ -1,6 +1,10 @@
 using WebApp_Exercise.Exceptions;
 namespace WebApp_Exercise.Applications.Domains;
 
+/// <summary>
+/// 商品カテゴリを表すドメインモデルです。
+/// カテゴリ名など、商品カテゴリとして守るべき業務ルールを持ちます。
+/// </summary>
 public class ItemCategory
 {
     public int? Id { get; private set; }

@@ -4,6 +4,10 @@ using WebApp_Exercise.Exceptions;
 using WebApp_Exercise.Presentations.ViewModels;
 namespace WebApp_Exercise.Presentations.Controllers;
 
+/// <summary>
+/// 商品登録機能の画面遷移を担当するControllerです。
+/// 入力、確認、戻る、登録、完了の各リクエストを受け付けます。
+/// </summary>
 [Route("ItemRegister")]
 public class ItemRegisterController(
     ILogger<ItemRegisterController> logger,

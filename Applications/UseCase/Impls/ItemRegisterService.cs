@@ -4,7 +4,10 @@ using WebApp_Exercise.Exceptions;
 using WebApp_Exercise.Infrastructures.Context;
 namespace WebApp_Exercise.Applications.Services.Impls;
 
-
+/// <summary>
+/// 商品登録機能の業務処理を担当します。
+/// 商品名の重複確認、カテゴリ取得、商品登録のトランザクション制御を行います。
+/// </summary>
 public class ItemRegisterService(
     AppDbContext context,
     IItemRepository itemRepository,

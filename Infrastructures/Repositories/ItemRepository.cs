@@ -6,7 +6,10 @@ using WebApp_Exercise.Infrastructures.Adapters;
 using WebApp_Exercise.Infrastructures.Context;
 namespace WebApp_Exercise.Infrastructures.Repositories;
 
-
+/// <summary>
+/// 商品データをPostgreSQLへ保存・取得するRepository実装です。
+/// IItemRepositoryの約束をEF CoreとAppDbContextで実現します。
+/// </summary>
 public class ItemRepository(
     AppDbContext appDbContext,
     ItemEntityAdapter itemAdapter,

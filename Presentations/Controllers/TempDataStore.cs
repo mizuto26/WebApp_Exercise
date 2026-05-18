@@ -2,6 +2,10 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 namespace WebApp_Exercise.Presentations.Controllers;
 
+/// <summary>
+/// TempDataにオブジェクトをJSON形式で保存・復元する補助クラスです。
+/// 確認画面から完了画面へ入力内容を引き継ぐために使います。
+/// </summary>
 public class TempDataStore<T>(string key)
     //Tは参照型のみ
     where T : class

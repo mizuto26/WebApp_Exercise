@@ -1,6 +1,10 @@
 using WebApp_Exercise.Exceptions;
 namespace WebApp_Exercise.Applications.Domains;
 
+/// <summary>
+/// 商品を表すドメインモデルです。
+/// 商品名や価格など、商品として守るべき業務ルールを持ちます。
+/// </summary>
 public class Item
 {
     public int? Id { get; private set; }
