@@ -6,7 +6,7 @@ namespace WebApp_Exercise.Infrastructures.Context;
 /// EF CoreでPostgreSQLへ接続するためのDbContextです。
 /// 商品、商品カテゴリ、商品在庫のテーブルとリレーションを設定します。
 /// </summary>
-public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
+public class AppDbContext() : DbContext
 {
     public DbSet<ItemCategoryEntity> ItemCategories { get; set; }
     public DbSet<ItemEntity> Items { get; set; }

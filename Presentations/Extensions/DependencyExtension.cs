@@ -25,7 +25,7 @@ public static class DependencyExtension
 
     private static void SettingEntityFrameworkCore(IConfiguration configuration, IServiceCollection services)
     {
-        var connectionString = configuration.GetConnectionString("PostgreSqlConnection");
+        string? connectionString = configuration.GetConnectionString("PostgreSqlConnection");
         services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
     }
 
