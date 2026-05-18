@@ -51,7 +51,7 @@ public class Item
         this.Price = price;
     }
 
-    public void ChangeProductCategory(ItemCategory? itemCategory)
+    public void ChangeItemCategory(ItemCategory? itemCategory)
     {
         this.ItemCategory = itemCategory;
     }

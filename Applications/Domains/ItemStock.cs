@@ -39,18 +39,7 @@ public class ItemStock
         this.Item = item;
     }
 
-    public override bool Equals(object? obj)
-    {
-        if (ReferenceEquals(this, obj)) return true;
-        if (obj is not ItemStock other) return false;
-        return this.Id == other.Id;
-    }
-
-    public override int GetHashCode()
-    {
-        if (this.Id == null) return 0;
-        return this.Id.GetHashCode();
-    }
+   
 
     public override string ToString()
     {

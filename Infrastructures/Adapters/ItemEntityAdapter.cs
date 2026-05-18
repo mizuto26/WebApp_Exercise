@@ -13,7 +13,7 @@ public class ItemEntityAdapter : IConverter<Item, ItemEntity>, IRestorer<ItemEnt
 
         ItemEntity entity = new()
         {
-            Id = domain.Id ?? 0,
+            Id = domain.Id,
             Name = domain.Name,
             Price = domain.Price,
             CategoryId = domain.ItemCategory?.Id,

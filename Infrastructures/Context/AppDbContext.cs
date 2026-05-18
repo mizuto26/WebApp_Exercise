@@ -13,6 +13,18 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<ItemEntity>()
+            .Property(ItemEntity => ItemEntity.Id)
+            .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<ItemStockEntity>()
+            .Property(ItemStockEntity => ItemStockEntity.Id)
+            .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<ItemCategoryEntity>()
+            .Property(ItemCategoryEntity => ItemCategoryEntity.Id)
+            .ValueGeneratedOnAdd();
+
+        modelBuilder.Entity<ItemEntity>()
             .HasOne(ItemEntity => ItemEntity.Category)
             .WithMany(ItemCategoryEntity => ItemCategoryEntity.Items)
             .OnDelete(DeleteBehavior.Restrict);

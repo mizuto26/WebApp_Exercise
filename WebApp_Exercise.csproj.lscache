@@ -107,6 +107,14 @@ obj/Debug/net8.0/
  WebApp_Exercise.AssemblyInfo.cs
  WebApp_Exercise.GlobalUsings.g.cs
  WebApp_Exercise.RazorAssemblyInfo.cs
+Presentations/Controllers/
+ ItemRegisterController.cs
+ TempDataStore.cs
+Presentations/
+ Extensions/DependencyExtension.cs
+ ViewModels/
+  ItemRegisterViewModel.cs
+  ItemRegisterViewModelAdapter.cs
 Program.cs
 
 [metadataReferences]
@@ -473,6 +481,10 @@ Views/Ex09/
 Views/Home/
  Index.cshtml
  Privacy.cshtml
+Views/ItemRegister/
+ Complete.cshtml
+ Confirm.cshtml
+ Enter.cshtml
 Views/Op04/
  Enter.cshtml
  Result.cshtml
@@ -495,6 +507,10 @@ Views/Ex09/
 Views/Home/
  Index.cshtml
  Privacy.cshtml
+Views/ItemRegister/
+ Complete.cshtml
+ Confirm.cshtml
+ Enter.cshtml
 Views/Op04/
  Enter.cshtml
  Result.cshtml

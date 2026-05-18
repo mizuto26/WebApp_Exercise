@@ -13,7 +13,7 @@ IConverter<ItemStock, ItemStockEntity>, IRestorer<ItemStockEntity, ItemStock>
 
         ItemStockEntity entity = new()
         {
-            Id = domain.Id ?? 0,
+            Id = domain.Id,
             Stock = domain.Stock,
             ItemId = 0,
             Product = null

@@ -1,21 +1,11 @@
+using WebApp_Exercise.Presentations.Extensions;
+
 WebApplicationBuilder? builder = WebApplication.CreateBuilder(args);
 
-// ==========================
-// 1. サービス登録（DI設定）
-// ==========================
-
-// MVCを使うための設定
-// Controller + View を使えるようにする
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-
-
-// ==========================
-// 2. アプリ本体を作成
-// ==========================
+builder.Services.SettingDependencyInjection(builder.Configuration);
 
 WebApplication? app = builder.Build();
-
-
 // ==========================
 // 3. エラー・セキュリティ設定
 // ==========================
@@ -54,12 +44,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    //idは引数の値
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
-// ==========================
-// 6. アプリ起動
-// ==========================
 
 app.Run();
