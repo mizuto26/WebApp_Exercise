@@ -12,12 +12,13 @@ namespace WebApp_Exercise.Presentations.Controllers;
 public class ItemRegisterController(
     ILogger<ItemRegisterController> logger,
     IItemRegisterService service,
-    IItemRegisterViewModelAdapter adapter,
-    TempDataStore<ItemRegisterViewModel> tempDataStore) : Controller
+    ItemRegisterViewModelAdapter adapter,
+    TempDataStore<ItemRegisterViewModel> tempDataStore)
+: Controller
 {
     private readonly ILogger<ItemRegisterController> _logger = logger;
     private readonly IItemRegisterService _service = service;
-    private readonly IItemRegisterViewModelAdapter _adapter = adapter;
+    private readonly ItemRegisterViewModelAdapter _adapter = adapter;
     private readonly TempDataStore<ItemRegisterViewModel> _tempDataStore = tempDataStore;
 
     [HttpGet("Enter")]

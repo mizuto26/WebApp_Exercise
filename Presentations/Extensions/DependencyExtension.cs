@@ -11,7 +11,7 @@ namespace WebApp_Exercise.Presentations.Extensions;
 
 /// <summary>
 /// アプリで使うDbContext、Repository、Service、AdapterをDIコンテナへ登録します。
-/// Program.csから呼び出され、各層の依存関係をまとめて設定します。
+/// Program.csから呼び出され、各層の依存関係(interfaceへの実装クラス)をまとめて設定します。
 /// </summary>
 public static class DependencyExtension
 {
@@ -35,6 +35,7 @@ public static class DependencyExtension
         services.AddScoped<ItemCategoryEntityAdapter>();
         services.AddScoped<ItemEntityAdapter>();
         services.AddScoped<ItemStockEntityAdapter>();
+
         services.AddScoped<IItemCategoryRepository, ItemCategoryRepository>();
         services.AddScoped<IItemRepository, ItemRepository>();
     }
@@ -48,7 +49,7 @@ public static class DependencyExtension
     //Presentation層のAdapter
     private static void SettingPresentations(IServiceCollection services)
     {
-        services.AddScoped<IItemRegisterViewModelAdapter, ItemRegisterViewModelAdapter>();
+        services.AddScoped<ItemRegisterViewModelAdapter>();
         services.AddScoped(_ => new TempDataStore<ItemRegisterViewModel>("ItemRegisterViewModel"));
     }
 }

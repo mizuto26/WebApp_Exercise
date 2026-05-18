@@ -7,7 +7,7 @@ namespace WebApp_Exercise.Presentations.ViewModels;
 /// 画面で入力された商品名、単価、在庫数、カテゴリをDomainに詰め替えます。
 /// </summary>
 public class ItemRegisterViewModelAdapter
-: IRestorer<ItemRegisterViewModel, Item>, IItemRegisterViewModelAdapter
+: IRestorer<ItemRegisterViewModel, Item>
 {
     public Item Restore(ItemRegisterViewModel target)
     {
