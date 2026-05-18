@@ -10,7 +10,7 @@ public class Ex09Controller : Controller
     public ActionResult Enter()
     {
         Exercise07Form? form = new();
-        return View("Enter", form);
+        return View(viewName: "Enter", model: form);
     }
 
     [ValidateAntiForgeryToken]
@@ -19,7 +19,7 @@ public class Ex09Controller : Controller
     {
         if (!this.ModelState.IsValid)
         {
-            return View("Enter", form);
+            return View(viewName: "Enter", model: form);
         }
         string? json = JsonSerializer.Serialize(form);
         this.TempData["Exercise07Form"] = json;
@@ -36,13 +36,13 @@ public class Ex09Controller : Controller
         }
         Exercise07Form? form = JsonSerializer.Deserialize<Exercise07Form>(json);
         form!.Answer = form.Value1 + form.Value2;
-        return View("Result", form);
+        return View(viewName: "Result", model: form);
     }
 
     [HttpGet("Back")]
     public IActionResult Back()
     {
-        return RedirectToAction("Enter");
+        return RedirectToAction(actionName: "Enter");
     }
 }
 

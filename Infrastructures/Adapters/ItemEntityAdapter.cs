@@ -31,7 +31,7 @@ public class ItemEntityAdapter
     public Item Restore(ItemEntity target)
     {
         if (target == null) throw new InternalException("引数targetがnullのため復元できません。");
-        Item? domain = new(target.Id, target.Name, target.Price);
+        Item? domain = new(id: target.Id, name: target.Name, price: target.Price);
         return domain;
     }
 }

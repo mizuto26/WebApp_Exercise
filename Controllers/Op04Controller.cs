@@ -9,7 +9,7 @@ public class Op04Controller : Controller
     public ActionResult Enter()
     {
         Op03Form? form = new();
-        return View("Enter", form);
+        return View(viewName: "Enter", model: form);
     }
 
     [ValidateAntiForgeryToken]
@@ -18,7 +18,7 @@ public class Op04Controller : Controller
     {
         if (!this.ModelState.IsValid)
         {
-            return View("Enter", form);
+            return View(viewName: "Enter", model: form);
         }
 
         int? result = form.Opt switch
@@ -32,12 +32,12 @@ public class Op04Controller : Controller
         };
 
         form.Answer = result;
-        return View("Result", form);
+        return View(viewName: "Result", model: form);
     }
 
     [HttpGet("Back")]
     public IActionResult Back()
     {
-        return RedirectToAction("Enter");
+        return RedirectToAction(actionName: "Enter");
     }
 }

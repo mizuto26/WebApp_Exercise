@@ -32,7 +32,7 @@ public class HomeController(ILogger<HomeController> logger) : Controller
             RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
         };
 
-        return View("Error", viewModel);
+        return View(viewName: "Error", model: viewModel);
     }
 
     public IActionResult ViewContent()
@@ -57,6 +57,6 @@ public class HomeController(ILogger<HomeController> logger) : Controller
         };
 
         string json = JsonSerializer.Serialize(product, JsonOptions);
-        return Content(json, "application/json");
+        return Content(content: json, contentType: "application/json");
     }
 }

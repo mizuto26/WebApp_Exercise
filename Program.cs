@@ -6,7 +6,7 @@ builder.Services
     .AddControllersWithViews()
     .AddRazorRuntimeCompilation();
 
-DependencyExtension.SettingDependencyInjection(builder.Services, builder.Configuration);
+DependencyExtension.SettingDependencyInjection(services: builder.Services, configuration: builder.Configuration);
 
 WebApplication? app = builder.Build();
 

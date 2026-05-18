@@ -67,7 +67,7 @@ public class Item
 
     public override bool Equals(object? obj)
     {
-        if (ReferenceEquals(this, obj)) return true;
+        if (ReferenceEquals(objA: this, objB: obj)) return true;
         if (obj is not Item other) return false;
         return this.Id == other.Id;
     }

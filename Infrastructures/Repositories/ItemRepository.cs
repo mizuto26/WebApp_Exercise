@@ -28,7 +28,7 @@ public class ItemRepository(
         }
         catch (Exception exception)
         {
-            throw new InternalException("引数に指定された商品名の存在有無を取得できませんでした。", exception);
+            throw new InternalException(message: "引数に指定された商品名の存在有無を取得できませんでした。", exception);
         }
     }
 
@@ -54,7 +54,7 @@ public class ItemRepository(
         }
         catch (Exception e)
         {
-            throw new InternalException("引数Idに一致する商品を取得できませんでした。", e);
+            throw new InternalException(message: "引数Idに一致する商品を取得できませんでした。", e);
         }
     }
 
@@ -77,7 +77,7 @@ public class ItemRepository(
         }
         catch (Exception exception)
         {
-            throw new InternalException("商品を永続化できませんでした。", exception);
+            throw new InternalException(message: "商品を永続化できませんでした。", exception);
         }
     }
 }

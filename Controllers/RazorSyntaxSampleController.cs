@@ -15,6 +15,6 @@ public class RazorSyntaxSampleController : Controller
             new() { Name = "田中次郎",      Age = 26 },
             new() { Name = "佐藤かおり",    Age = 25 }
         ];
-        return View("ShowData", list);
+        return View(viewName: "ShowData", model: list);
     }
 }

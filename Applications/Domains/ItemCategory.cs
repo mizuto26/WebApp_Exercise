@@ -18,8 +18,8 @@ public class ItemCategory
         Name = name;
     }
 
-    public ItemCategory(string? name) : this(null, name) { }
-    public ItemCategory(int? id) : this(id, null) { }
+    public ItemCategory(string? name) : this(id: null, name: name) { }
+    public ItemCategory(int? id) : this(id: id, name: null) { }
 
     private void ValidateId(int? id)
     {
@@ -42,7 +42,7 @@ public class ItemCategory
 
     public override bool Equals(object? obj)
     {
-        if (ReferenceEquals(this, obj)) return true;
+        if (ReferenceEquals(objA: this, objB: obj)) return true;
         if (obj is not ItemCategory other) return false;
         return this.Id == other.Id;
     }

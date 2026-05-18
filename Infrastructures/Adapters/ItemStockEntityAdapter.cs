@@ -29,6 +29,6 @@ public class ItemStockEntityAdapter
     public ItemStock Restore(ItemStockEntity target)
     {
         if (target == null) throw new InternalException("引数targetがnullのため復元できません。");
-        return new ItemStock(target.Id, target.Stock ?? 0);
+        return new ItemStock(id: target.Id, stock: target.Stock ?? 0);
     }
 }

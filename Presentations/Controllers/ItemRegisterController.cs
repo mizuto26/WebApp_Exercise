@@ -27,7 +27,7 @@ public class ItemRegisterController(
         ItemRegisterViewModel? viewModel = _tempDataStore.Load(this);
         viewModel ??= new ItemRegisterViewModel();
         this.PopulateCategories(viewModel);
-        return View("Enter", viewModel);
+        return View(viewName: "Enter", model: viewModel);
     }
 
     private void PopulateCategories(ItemRegisterViewModel viewModel)
@@ -43,7 +43,7 @@ public class ItemRegisterController(
         if (!ModelState.IsValid)
         {
             this.PopulateCategories(viewModel);
-            return View("Enter", viewModel);
+            return View(viewName: "Enter", model: viewModel);
         }
 
         string? name = viewModel.Name?.Trim() ?? string.Empty;
@@ -56,7 +56,7 @@ public class ItemRegisterController(
         {
             this.ModelState.AddModelError(nameof(viewModel.Name), exception.Message);
             this.PopulateCategories(viewModel);
-            return View("Enter", viewModel);
+            return View(viewName: "Enter", model: viewModel);
         }
 
         try
@@ -70,23 +70,23 @@ public class ItemRegisterController(
         {
             this.ModelState.AddModelError(nameof(viewModel.CategoryId), exception.Message);
             this.PopulateCategories(viewModel);
-            return View("Enter", viewModel);
+            return View(viewName: "Enter", model: viewModel);
         }
-        return View("Confirm", viewModel);
+        return View(viewName: "Confirm", model: viewModel);
     }
 
     [HttpPost("Back")]
     public IActionResult Back(ItemRegisterViewModel viewModel)
     {
         _logger.LogInformation("[戻る]ボタンクリック:{ViewModel}", viewModel!.ToString());
-        _tempDataStore.Save(this, viewModel);
+        _tempDataStore.Save(controller: this, model: viewModel);
         return RedirectToAction("Enter");
     }
 
     [HttpPost("Register")]
     public IActionResult Register(ItemRegisterViewModel viewModel)
     {
-        _tempDataStore.Save(this, viewModel);
+        _tempDataStore.Save(controller: this, model: viewModel);
         return RedirectToAction("Complete");
     }
 
@@ -100,6 +100,6 @@ public class ItemRegisterController(
 
         var item = _adapter.Restore(viewModel!);
         _service.Register(item);
-        return View("Complete", viewModel);
+        return View(viewName: "Complete", model: viewModel);
     }
 }

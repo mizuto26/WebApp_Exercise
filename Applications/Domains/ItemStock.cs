@@ -19,7 +19,7 @@ public class ItemStock
         Stock = stock;
     }
 
-    public ItemStock(int stcok) : this(null, stcok) { }
+    public ItemStock(int stcok) : this(id: null, stock: stcok) { }
 
     private void ValidateId(int? id)
     {
@@ -43,7 +43,7 @@ public class ItemStock
         this.Item = item;
     }
 
-   
+
 
     public override string ToString()
     {

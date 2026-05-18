@@ -36,7 +36,7 @@ public class ItemCategoryRepository(
         }
         catch (Exception exception)
         {
-            throw new InternalException("すべての商品カテゴリを取得できませんでした。", exception);
+            throw new InternalException(message: "すべての商品カテゴリを取得できませんでした。", exception);
         }
     }
 
@@ -53,7 +53,7 @@ public class ItemCategoryRepository(
         }
         catch (Exception exception)
         {
-            throw new InternalException("引数Idに一致する商品カテゴリを取得できませんでした。", exception);
+            throw new InternalException(message: "引数Idに一致する商品カテゴリを取得できませんでした。", exception);
         }
     }
 }

@@ -27,7 +27,7 @@ public class ItemCategoryEntityAdapter
     public ItemCategory Restore(ItemCategoryEntity target)
     {
         if (target == null) throw new InternalException("引数targetがnullのため復元できません。");
-        ItemCategory? domain = new(target.Id, target.Name);
+        ItemCategory? domain = new(id: target.Id, name: target.Name);
         return domain;
     }
 }
