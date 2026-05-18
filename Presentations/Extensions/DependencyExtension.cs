@@ -49,7 +49,7 @@ public static class DependencyExtension
     private static void SettingPresentations(IServiceCollection services)
     {
         // 商品登録ViewModelをドメインオブジェクト:商品に変換するアダプターインターフェイスの実装
-        services.AddScoped<ItemRegisterViewModelAdapter>();
+        services.AddScoped<IItemRegisterViewModelAdapter, ItemRegisterViewModelAdapter>();
         // TempDataへのItemRegisterViewの保存・復元するためのクラス
         // コンストラクタを利用して明示的にDIコンテナにインスタンスを登録する
         services.AddScoped(_ => new TempDataStore<ItemRegisterViewModel>("ItemRegisterViewModel"));

@@ -2,7 +2,9 @@ using WebApp_Exercise.Applications.Adapters;
 using WebApp_Exercise.Applications.Domains;
 namespace WebApp_Exercise.Presentations.ViewModels;
 
-public class ItemRegisterViewModelAdapter : IRestorer<ItemRegisterViewModel, Item>
+public class ItemRegisterViewModelAdapter :
+    IRestorer<ItemRegisterViewModel, Item>,
+    IItemRegisterViewModelAdapter
 {
     public Item Restore(ItemRegisterViewModel target)
     {
