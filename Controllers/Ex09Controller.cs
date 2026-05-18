@@ -29,7 +29,7 @@ public class Ex09Controller : Controller
     [HttpGet("Result")]
     public IActionResult Result()
     {
-        string? json = (string)TempData["Exercise07Form"]!;
+        string? json = (string)this.TempData["Exercise07Form"]!;
         if (string.IsNullOrEmpty(json))
         {
             return RedirectToAction("Enter");

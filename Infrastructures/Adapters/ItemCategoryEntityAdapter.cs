@@ -1,0 +1,33 @@
+using WebApp_Exercise.Applications.Adapters;
+using WebApp_Exercise.Applications.Domains;
+using WebApp_Exercise.Exceptions;
+using WebApp_Exercise.Infrastructures.Entities;
+namespace WebApp_Exercise.Infrastructures.Adapters;
+/// <summary>
+/// ドメインオブジェクト:ItemCategoryとItemCategoryEntityの相互変換Adapter
+/// </summary>
+/// <typeparam name="TDomain">ItemCategory</typeparam>
+/// <typeparam name="TTarget">ItemCategoryEntity</typeparam>
+public class ItemCategoryEntityAdapter :
+IConverter<ItemCategory, ItemCategoryEntity>, IRestorer<ItemCategoryEntity, ItemCategory>
+{
+    public ItemCategoryEntity Convert(ItemCategory domain)
+    {
+        if (domain == null) throw new InternalException("引数domainがnullのため変換できません。");
+
+        ItemCategoryEntity? entity = new();
+
+        if (domain.Id == null) entity.Id = 0;
+        else entity.Id = domain.Id.Value;
+
+        entity.Name = domain.Name;
+        return entity;
+    }
+
+    public ItemCategory Restore(ItemCategoryEntity target)
+    {
+        if (target == null) throw new InternalException("引数targetがnullのため復元できません。");
+        var domain = new ItemCategory(target.Id, target.Name);
+        return domain;
+    }
+}

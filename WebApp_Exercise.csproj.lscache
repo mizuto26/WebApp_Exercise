@@ -53,6 +53,19 @@ TemporaryDependencyNodeTargetIdentifier=net8.0
 /warnaserror+:NU1605,SYSLIB0011
 
 [sourceFiles]
+Applications/Adapters/
+ IConverter.cs
+ IRestorer.cs
+Applications/Domains/
+ Item.cs
+ ItemCategory.cs
+ ItemStock.cs
+Applications/Repositories/
+ IItemCategoryRepository.cs
+ IItemRepository.cs
+Applications/Services/
+ IItemRegisterService.cs
+ Impls/ItemRegisterService.cs
 Controllers/
  Ex03Controller.cs
  Ex04Controller.cs
@@ -66,6 +79,24 @@ Controllers/
  Op04Controller.cs
  RazorSyntaxSampleController.cs
  TagHelperFormController.cs
+Exceptions/
+ DomainException.cs
+ ExistsException.cs
+ InternalException.cs
+ NotFoundException.cs
+Infrastructures/Adapters/
+ ItemCategoryEntityAdapter.cs
+ ItemEntityAdapter.cs
+ ItemStockEntityAdapter.cs
+Infrastructures/
+ Context/AppDbContext.cs
+ Entities/
+  ItemCatgoryEntity.cs
+  ItemEntity.cs
+  ItemStockEntity.cs
+ Repositories/
+  IItemRepository.cs
+  ItemCategoryRepository.cs
 Models/
  ErrorViewModel.cs
  Exercise07Form.cs
@@ -389,7 +420,12 @@ Program.cs
  microsoft.codeanalysis.common/4.0.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.dll
  microsoft.codeanalysis.csharp/4.0.0/lib/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll
  microsoft.codeanalysis.razor/6.0.0/lib/netstandard2.0/Microsoft.CodeAnalysis.Razor.dll
+ microsoft.entityframeworkcore.abstractions/8.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+ microsoft.entityframeworkcore.relational/8.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+ microsoft.entityframeworkcore/8.0.0/lib/net8.0/Microsoft.EntityFrameworkCore.dll
  microsoft.extensions.dependencymodel/8.0.0/lib/net8.0/Microsoft.Extensions.DependencyModel.dll
+ npgsql.entityframeworkcore.postgresql/8.0.0/lib/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+ npgsql/8.0.0/lib/net8.0/Npgsql.dll
 
 [analyzerReferences]
 ../../../../../usr/lib/dotnet/sdk/8.0.126/Sdks/Microsoft.NET.Sdk.Razor/source-generators/
@@ -424,6 +460,7 @@ Program.cs
 <NUGET>/microsoft.codeanalysis.analyzers/3.3.2/analyzers/dotnet/cs/
  Microsoft.CodeAnalysis.Analyzers.dll
  Microsoft.CodeAnalysis.CSharp.Analyzers.dll
+<NUGET>/microsoft.entityframeworkcore.analyzers/8.0.0/analyzers/dotnet/cs/Microsoft.EntityFrameworkCore.Analyzers.dll
 
 [analyzerConfigFiles]
 ../../../../../usr/lib/dotnet/sdk/8.0.126/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_8_default.globalconfig
