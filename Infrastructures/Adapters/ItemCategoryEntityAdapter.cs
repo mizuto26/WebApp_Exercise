@@ -3,11 +3,7 @@ using WebApp_Exercise.Applications.Domains;
 using WebApp_Exercise.Exceptions;
 using WebApp_Exercise.Infrastructures.Entities;
 namespace WebApp_Exercise.Infrastructures.Adapters;
-/// <summary>
-/// ドメインオブジェクト:ItemCategoryとItemCategoryEntityの相互変換Adapter
-/// </summary>
-/// <typeparam name="TDomain">ItemCategory</typeparam>
-/// <typeparam name="TTarget">ItemCategoryEntity</typeparam>
+
 public class ItemCategoryEntityAdapter :
 IConverter<ItemCategory, ItemCategoryEntity>, IRestorer<ItemCategoryEntity, ItemCategory>
 {

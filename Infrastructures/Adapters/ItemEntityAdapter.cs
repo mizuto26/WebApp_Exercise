@@ -6,7 +6,6 @@ namespace WebApp_Exercise.Infrastructures.Adapters;
 
 public class ItemEntityAdapter : IConverter<Item, ItemEntity>, IRestorer<ItemEntity, Item>
 {
-
     public ItemEntity Convert(Item domain)
     {
         if (domain == null) throw new InternalException("引数domainがnullのため変換できません。");
