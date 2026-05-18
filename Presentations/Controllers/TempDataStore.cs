@@ -14,7 +14,8 @@ public class TempDataStore<T>(string key)
 
     public T? Load(Controller controller)
     {
-        bool exists = controller.TempData.TryGetValue(key: _key, out object? value);
+        //out -> 「戻り値を追加で返す」
+        bool exists = controller.TempData.TryGetValue(key: _key, value: out object? value);
         if (!exists) return null;
 
         string? json = value as string;
