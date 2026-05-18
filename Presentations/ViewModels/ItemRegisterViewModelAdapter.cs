@@ -11,9 +11,10 @@ public class ItemRegisterViewModelAdapter
 {
     public Item Restore(ItemRegisterViewModel target)
     {
-        var stock = new ItemStock(target.Stock ?? 0);
-        var category = new ItemCategory(target.CategoryId, target.CategoryName);
-        var item = new Item(target.Name, target.Price ?? 0);
+        ItemStock? stock = new(target.Stock ?? 0);
+        ItemCategory? category = new(target.CategoryId, target.CategoryName);
+        Item? item = new(target.Name, target.Price ?? 0);
+
         item.ChangeItemCategory(category);
         item.ChangeStock(stock);
         return item;

@@ -25,7 +25,7 @@ public class ItemRegisterService(
 
     public ItemCategory GetItemCategoryById(int id)
     {
-        var result = _itemCategoryRepository.FindById(id)
+        ItemCategory? result = _itemCategoryRepository.FindById(id)
             ?? throw new NotFoundException($"指定されたId:{id}の商品カテゴリは存在しません。");
         return result;
     }

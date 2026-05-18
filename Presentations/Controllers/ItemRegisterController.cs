@@ -46,7 +46,8 @@ public class ItemRegisterController(
             return View("Enter", viewModel);
         }
 
-        var name = viewModel.Name?.Trim() ?? string.Empty;
+        string? name = viewModel.Name?.Trim() ?? string.Empty;
+
         try
         {
             _service.Exists(name);
@@ -60,7 +61,7 @@ public class ItemRegisterController(
 
         try
         {
-            var categoryId = viewModel.CategoryId ?? 0;
+            int categoryId = viewModel.CategoryId ?? 0;
             var itemCategory = _service.GetItemCategoryById(categoryId);
             _logger.LogInformation("商品カテゴリId:{CategoryId}の商品カテゴリを取得する", categoryId);
             viewModel.CategoryName = itemCategory.Name;

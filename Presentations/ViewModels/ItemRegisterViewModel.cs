@@ -33,17 +33,14 @@ public class ItemRegisterViewModel
 
     public void SetCategories(List<ItemCategory> categories)
     {
-        var categorySelectItems =
-            //<select> の <option>1件
-            new List<SelectListItem>
+        List<SelectListItem>? categorySelectItems = [ new()
             {
-                new() {
-                    Value = "",
-                    Text = "（選択してください）"
-                }
-            };
+                Value = "",
+                Text = "（選択してください）"
+            }
+        ];
 
-        foreach (var category in categories)
+        foreach (ItemCategory? category in categories)
         {
             if (!category.Id.HasValue) continue;
 
@@ -52,12 +49,11 @@ public class ItemRegisterViewModel
             if (string.IsNullOrEmpty(category.Name)) categoryName = "(名称未設定)";
             else categoryName = category.Name;
 
-            var selectItem =
-                new SelectListItem
-                {
-                    Value = category.Id.Value.ToString(),
-                    Text = categoryName
-                };
+            SelectListItem? selectItem = new()
+            {
+                Value = category.Id.Value.ToString(),
+                Text = categoryName
+            };
 
             categorySelectItems.Add(selectItem);
         }

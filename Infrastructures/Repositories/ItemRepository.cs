@@ -42,11 +42,11 @@ public class ItemRepository(
 
             if (entity == null) { return null; }
 
-            var item = _itemAdapter.Restore(entity);
+            Item? item = _itemAdapter.Restore(entity);
 
             if (entity.Stock != null)
             {
-                var stock = _stockAdapter.Restore(entity.Stock);
+                ItemStock? stock = _stockAdapter.Restore(entity.Stock);
                 stock.ChangeProduct(item);
                 item.ChangeStock(stock);
             }

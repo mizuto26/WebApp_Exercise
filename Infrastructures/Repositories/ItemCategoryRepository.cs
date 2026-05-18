@@ -27,7 +27,7 @@ public class ItemCategoryRepository(
                 .AsNoTracking()
                 .ToList();
 
-            var itemCategories = new List<ItemCategory>();
+            List<ItemCategory> itemCategories = [];
             foreach (var entity in entities)
             {
                 itemCategories.Add(_adapter.Restore(entity));

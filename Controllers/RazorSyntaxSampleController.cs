@@ -8,13 +8,13 @@ public class RazorSyntaxSampleController : Controller
     [HttpGet("ShowData")]
     public ActionResult Show()
     {
-        var list = new List<SampleForm>
-        {
+        List<SampleForm> list =
+        [
             new() { Name = "山田太郎",      Age = 25 },
             new() { Name = "鈴木花子",      Age = 23 },
             new() { Name = "田中次郎",      Age = 26 },
             new() { Name = "佐藤かおり",    Age = 25 }
-        };
+        ];
         return View("ShowData", list);
     }
 }
