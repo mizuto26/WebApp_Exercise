@@ -15,7 +15,7 @@ namespace WebApp_Exercise.Presentations.Extensions;
 /// </summary>
 public static class DependencyExtension
 {
-    public static void SettingDependencyInjection(this IServiceCollection services, IConfiguration configuration)
+    public static void SettingDependencyInjection(IServiceCollection services, IConfiguration configuration)
     {
         SettingEntityFrameworkCore(configuration, services);
         SettingInfrastructures(services);
